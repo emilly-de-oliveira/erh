@@ -9,8 +9,8 @@
             throw new Exception(" Somente letras e espaços em branco são permitidos. ");
         }
         
-        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            throw new Exception(" Formato de e-mail inválido. ");
+        if (!filter_var($_POST['data'], FILTER_VALIDATE_DATE)) {
+            throw new Exception(" Formato de data inválido. ");
         }
 
         if(empty($_POST['id'])){
@@ -40,17 +40,17 @@
 </head>
 <body>
     <form action="ContatoForm.php" method="post">
-        <h3>Formulário Contato</h3>
+        <h3>Formulário Musica</h3>
         <?php echo(!empty($_GET["erro"])? $_GET["erro"]:"") ?><br>
         <input type="hidden" name="id" value="<?php echo(!empty($data->id) ? $data->id:"")?>" />
         <label for="">Nome</label>
         <input type="text" name="nome" value="<?php echo(!empty($data->nome) ? $data->nome : "" ) ?>"><br>
 
-        <label for="">Email</label>
-        <input type="text" name="email" value="<?php echo(!empty($data->email) ? $data->email : "" ) ?>"><br>
+        <label for="">Cantor</label>
+        <input type="text" name="cantor" value="<?php echo(!empty($data->cantor) ? $data->cantor : "" ) ?>"><br>
 
-        <label for="">Telefone</label>
-        <input type="text" name="telefone" value="<?php echo(!empty($data->telefone) ? $data->telefone : "" ) ?>"><br>
+        <label for="">Data</label>
+        <input type="date" name="data" value="<?php echo(!empty($data->data) ? $data->data : "" ) ?>"><br>
 
         <button type="submit"><?php echo(empty($_GET['id'])?"Salvar":"Atualizar")?></button><br>
         <a href="ContatoList.php">Voltar</a><br><br>
