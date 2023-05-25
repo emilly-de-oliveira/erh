@@ -19,20 +19,20 @@
 CREATE DATABASE IF NOT EXISTS `ex_aula` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `ex_aula`;
 
--- Copiando estrutura para tabela ex_aula.usuario
-CREATE TABLE IF NOT EXISTS `usuario` (
+-- Copiando estrutura para tabela ex_aula.musica
+CREATE TABLE IF NOT EXISTS `musica` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `telefone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `cantor` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `data` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoEX AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Copiando dados para a tabela ex_aula.usuario: ~1 rows (aproximadamente)
-INSERT INTO `usuario` (`id`, `nome`, `telefone`, `email`) VALUES
-	(5, 'teste', 'rteste', 'teste@teste.com'),
-	(6, 'teste', 'rteste', 'teste@teste.com'),
-	(7, 'jackson', '84888888', 'jackson@teste.com');
+-- Copiando dados para a tabela ex_aula.musica: ~1 rows (aproximadamente)
+INSERT INTO `musica` (`id`, `nome`, `cantor`, `data`) VALUES
+	(1, 'Silence', 'Mashmello', '20/04/2020'),
+	(2, 'Happier', 'Mashmello', '03/09/2018'),
+	(3, 'Exagerado', 'Cazuza', '10/10/2010');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
