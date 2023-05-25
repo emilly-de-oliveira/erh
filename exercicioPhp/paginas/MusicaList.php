@@ -6,7 +6,7 @@
 
     if(!empty($_GET['id'])){
         $conn->deletar($_GET['id']);
-        header("location: ContatoList.php");
+        header("location: MusicaList.php");
     }
 
 ?>
@@ -20,12 +20,12 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="ContatoForm.php">Cadastrar</a><br><br>
+    <a href="MusicaForm.php">Cadastrar</a><br><br>
 <table border="1">
     <tr>
         <th>Nome</th>
-        <th>Telefone</th>
-        <th>Email</th>
+        <th>Cantor</th>
+        <th>Data</th>
         <th></th>
         <th></th>
     </tr>
@@ -33,10 +33,10 @@
         foreach($load as $item){
             echo "<tr>";
                 echo "<td>".$item->nome."</td>";
-                echo "<td>".$item->telefone."</td>";
-                echo "<td>".$item->email."</td>";
-                 echo "<td><a href='ContatoForm.php?id=$item->id'>Editar</a></td>";
-                echo "<td><a onclick='return confirm(\"Deseja Excluir? \")' href='ContatoList.php?id=$item->id'>Deletar</a></td>";
+                echo "<td>".$item->cantor."</td>";
+                echo "<td>".$item->data."</td>";
+                 echo "<td><a href='MusicaForm.php?id=$item->id'>Editar</a></td>";
+                echo "<td><a onclick='return confirm(\"Deseja Excluir? \")' href='MusicaList.php?id=$item->id'>Deletar</a></td>";
             echo "<tr>";
         }
     ?>
