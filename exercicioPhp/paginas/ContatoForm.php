@@ -18,11 +18,11 @@
         } else {
           $conn->atualizar($_POST);
         }
-        header("location: ContatoList.php");
+        header("location: MusicaList.php");
 
     } catch (Exception $e){
         $id = $_POST['id'];
-        header("location: ContatoForm.php?id=$id&erro=".$e->getMessage());
+        header("location: MusicaForm.php?id=$id&erro=".$e->getMessage());
     }
  }
  if(!empty($_GET['id'])){
@@ -39,7 +39,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="ContatoForm.php" method="post">
+    <form action="MusicaForm.php" method="post">
         <h3>Formulário Musica</h3>
         <?php echo(!empty($_GET["erro"])? $_GET["erro"]:"") ?><br>
         <input type="hidden" name="id" value="<?php echo(!empty($data->id) ? $data->id:"")?>" />
@@ -53,7 +53,7 @@
         <input type="date" name="data" value="<?php echo(!empty($data->data) ? $data->data : "" ) ?>"><br>
 
         <button type="submit"><?php echo(empty($_GET['id'])?"Salvar":"Atualizar")?></button><br>
-        <a href="ContatoList.php">Voltar</a><br><br>
+        <a href="MusicaList.php">Voltar</a><br><br>
     </form>
 </body>
 </html>
